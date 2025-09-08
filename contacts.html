@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Сторінка контактів з формою зворотного зв’язку."
+    />
+    <title>Лабораторна 2 - Контакти</title>
+    <link rel="icon" href="assets/images/favicon.ico" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти до основного контенту</a>
+    <header>
+      <h1>Контакти</h1>
+      <nav aria-label="Головна навігація">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="about.html">Про нас</a></li>
+          <li><a href="contacts.html" aria-current="page">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <h2>Залиште нам повідомлення</h2>
+      <form action="#" method="post">
+        <div class="form-row">
+          <label for="name">Ваше ім’я</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Введіть ім’я"
+            required
+            minlength="2"
+            maxlength="50"
+            pattern="[А-Яа-яA-Za-zІіЇїЄєҐґ'’\- ]{2,50}"
+            title="Використовуйте лише українські чи латинські літери, пробіл, тире та апостроф."
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="email">Ваш email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="phone">Телефон</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+38(0XX)-XXX-XX-XX"
+            pattern="^\+38\(0\d{2}\)-\d{3}-\d{2}-\d{2}$"
+            title="Формат: +38(0XX)-XXX-XX-XX"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="message">Коментар</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Ваше повідомлення..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-row">
+          <button>Відправити</button>
+        </div>
+      </form>
+
+      <section aria-labelledby="contacts-section">
+        <h2 id="contacts-section">Наші контакти</h2>
+        <ul>
+          <li>Телефон: <a href="tel:+380501234567">+38(050)-123-45-67</a></li>
+          <li>Email: <a href="mailto:mxmzkn19@gmail.com">mxmzkn19@gmail.com</a></li>
+          <li>Адреса: м. Запоріжжя, вул. Университетська, 65</li>
+        </ul>
+      </section>
+    </main>
+
+    <aside class="sidebar" aria-label="Соціальні мережі">
+      <h3>Ми у соцмережах</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+      </ul>
+    </aside>
+
+    <footer>
+      <p>&copy; © Заікін Максим Вадимович, група 6.1213.1, 2025.</p>
+    </footer>
+  </body>
+</html>

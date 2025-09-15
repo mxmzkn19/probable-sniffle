@@ -11,119 +11,157 @@
     <link rel="icon" href="assets/images/favicon.ico" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Перейти до основного контенту</a>
-    <header class="site-header">
-      <h1 class="site-title">Мій перший лендінг</h1>
-      <nav class="main-nav" aria-label="Головна навігація">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="index.html" aria-current="page">Головна</a>
+    <a class="skip-link" href="#main-content">Перейти до основного контенту</a>
+
+    <header class="header">
+      <h1 class="header__title">Мій перший лендінг</h1>
+      <nav class="navigation" aria-label="Головна навігація">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="index.html" class="navigation__link" aria-current="page">Головна</a>
           </li>
-          <li class="nav-item"><a href="about.html">Про нас</a></li>
-          <li class="nav-item"><a href="contacts.html">Контакти</a></li>
+          <li class="navigation__item">
+            <a href="about.html" class="navigation__link">Про нас</a>
+          </li>
+          <li class="navigation__item">
+            <a href="contacts.html" class="navigation__link">Контакти</a>
+          </li>
         </ul>
       </nav>
     </header>
-    <main id="main">
-      <p>Студент: Заікін Максим Вадимович</p>
-      <p>Група: 6.1213.1</p>
-      <article>
-        <h2>Новини про студента</h2>
-        <p>
+
+    <main id="main-content" class="main">
+      <p class="main__student">Студент: Заікін Максим Вадимович</p>
+      <p class="main__group">Група: 6.1213.1</p>
+
+      <article class="article">
+        <h2 class="article__title">Новина дня</h2>
+        <p class="article__text">
           Студент Заікін Максим Вадимович успішно почав виконання лабораторної роботи №2.
         </p>
-      </article>
-      <article class="news">
-        <header class="news-header">
-          <h2>Успішна презентація лендінгу</h2>
-        </header>
-        <p>
-          Сьогодні Заікін Максим Вадимович представив власний перший лендінг у межах лабораторної роботи.
-        </p>
-        <figure class="news-figure">
-          <img src="assets/images/news/wow.png" alt="Студент займається створенням лабораторної роботи" width="400" />
-          <figcaption>Шокуюча новина для всіх</figcaption>
+        <figure class="media article__media media--framed">
+          <img
+            class="media__img"
+            src="assets/images/news/wow.png"
+            alt="Студент займається створенням лабораторної роботи"
+            width="400"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption class="media__caption">Шокуюча новина для всіх</figcaption>
         </figure>
       </article>
-      <section>
-        <h2>Список завдань</h2>
-        <ul>
-          <li>Створити теги main, article, section.</li>
-          <li>Додати атрибут id="main" до тегу main.</li>
-          <li>Вставити skip-link.</li>
-          <li>Додати список та таблицю.</li>
-        </ul>
-      </section>
-      <section>
-        <h2>Таблиця прогресу</h2>
-        <table>
+
+      <section class="services">
+        <h3 class="services__title">Наші послуги</h3>
+        <table class="services__table">
           <thead>
-            <tr>
-              <th>Завдання</th>
-              <th>Статус</th>
+            <tr class="services__row">
+              <th class="services__header">Послуга</th>
+              <th class="services__header">Опис</th>
+              <th class="services__header">Ціна</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Структура сторінки</td>
-              <td>Виконано</td>
-            </tr>
-            <tr>
-              <td>Доступність (skip-link)</td>
-              <td>Виконано</td>
-            </tr>
-            <tr>
-              <td>Контент</td>
-              <td>В процесі</td>
+            <tr class="services__row">
+              <td class="services__cell">Розробка сайту</td>
+              <td class="services__cell">Лендінг або корпоративний сайт</td>
+              <td class="services__cell">2 булочки та чай</td>
             </tr>
           </tbody>
         </table>
       </section>
-      <section>
-        <h3>Наші переваги</h3>
-        <ul>
-          <li>Сучасний підхід до навчання</li>
-          <li>Доступність та семантичність</li>
-          <li>Фокус на практичних завданнях</li>
-          <li>Можливість розвитку власних проєктів</li>
+
+      <section class="main__section">
+        <h2 class="main__section-title">Список завдань</h2>
+        <ul class="main__list">
+          <li class="main__list-item">Створити теги main, article, section.</li>
+          <li class="main__list-item">Додати атрибут id="main-content" до тегу main.</li>
+          <li class="main__list-item">Вставити skip-link.</li>
+          <li class="main__list-item">Додати список та таблицю.</li>
         </ul>
       </section>
-      <section>
-        <h3>Додаткові переваги</h3>
-        <table>
-          <thead>
+
+      <section class="main__section">
+        <h2 class="main__section-title">Таблиця прогресу</h2>
+        <table class="main__table">
+          <thead class="main__thead">
             <tr>
-              <th>Перевага</th>
-              <th>Опис</th>
+              <th class="main__th">Завдання</th>
+              <th class="main__th">Статус</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="main__tbody">
             <tr>
-              <td>Практика</td>
-              <td>Кожна робота супроводжується практичними завданнями</td>
+              <td class="main__td">Структура сторінки</td>
+              <td class="main__td">Виконано</td>
             </tr>
             <tr>
-              <td>Досвід</td>
-              <td>Навички створення повноцінних вебсторінок</td>
+              <td class="main__td">Доступність (skip-link)</td>
+              <td class="main__td">Виконано</td>
             </tr>
             <tr>
-              <td>Результат</td>
-              <td>Побудова власного портфоліо</td>
+              <td class="main__td">Контент</td>
+              <td class="main__td">В процесі</td>
             </tr>
           </tbody>
         </table>
       </section>
-      <aside>
-        <h3>Корисні посилання</h3>
-        <ul>
-          <li><a href="https://developer.mozilla.org/uk/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
-          <li><a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer">W3Schools</a></li>
-          <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer">HTML Validator</a></li>
+
+      <section class="main__section">
+        <h3 class="main__section-title">Наші переваги</h3>
+        <ul class="main__list">
+          <li class="main__list-item">Сучасний підхід до навчання</li>
+          <li class="main__list-item">Доступність та семантичність</li>
+          <li class="main__list-item">Фокус на практичних завданнях</li>
+          <li class="main__list-item">Можливість розвитку власних проєктів</li>
         </ul>
-      </aside>
+      </section>
+
+      <section class="main__section">
+        <h3 class="main__section-title">Додаткові переваги</h3>
+        <table class="main__table">
+          <thead class="main__thead">
+            <tr>
+              <th class="main__th">Перевага</th>
+              <th class="main__th">Опис</th>
+            </tr>
+          </thead>
+          <tbody class="main__tbody">
+            <tr>
+              <td class="main__td">Практика</td>
+              <td class="main__td">Кожна робота супроводжується практичними завданнями</td>
+            </tr>
+            <tr>
+              <td class="main__td">Досвід</td>
+              <td class="main__td">Навички створення повноцінних вебсторінок</td>
+            </tr>
+            <tr>
+              <td class="main__td">Результат</td>
+              <td class="main__td">Побудова власного портфоліо</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
-    <footer class="site-footer">
-      <p>Заікін Максим Вадимович, група 6.1213.1</p>
+
+    <aside class="sidebar sidebar--links">
+      <h3 class="sidebar__title">Корисні посилання</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="https://developer.mozilla.org/uk/" class="sidebar__link" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="https://www.w3schools.com/" class="sidebar__link" target="_blank" rel="noopener noreferrer">W3Schools</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="https://validator.w3.org/" class="sidebar__link" target="_blank" rel="noopener noreferrer">HTML Validator</a>
+        </li>
+      </ul>
+    </aside>
+
+    <footer class="footer">
+      <p class="footer__text">Заікін Максим Вадимович, група 6.1213.1</p>
     </footer>
   </body>
 </html>

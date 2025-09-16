@@ -1,0 +1,346 @@
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box; /* ширина/висота включає padding+border */
+}
+
+/* CSS-змінні: централізовані «токени» дизайну (відступи, радіуси, кольори) */
+:root {
+  --container-max: 1200px;   /* максимальна ширина контенту */
+
+  --space-1: 0.25rem;  /* 4px при базі 16px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+
+  --radius-1: 4px;   /* малий радіус */
+  --radius-2: 8px;   /* середній радіус */
+
+  --c-bg: #f4f6f8;     /* фон сторінки */
+  --c-surface: #ffffff;/* фон карток/секцій */
+  --c-text: #333333;   /* основний текст */
+  --c-muted: #60636b;  /* приглушений текст */
+  --c-border: #e0e0e0; /* сітка тема */
+  --c-primary: #0066df;/* базовий синій */
+  --c-primary-600: #0b5ed7; /* темний синій для hover */
+  --c-accent: #ffcc00; /* акцент для дрібних підсвіток */
+
+  --shadow-1: 0 2px 12px rgba(0, 0, 0, 0.06); /* м’яка тінь */
+}
+/* Базова типографіка та фон документа */
+html {
+  font-size: 16px; /* коренева база (1rem = 16px) */
+}
+
+body {
+  margin: 0; /* обнуляємо стандартні відступи браузера */
+  color: var(--c-text); /* колір тексту зі змінної */
+  background: var(--c-bg); /* фон сторінки зі змінної */
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; 
+  /* сучасний стек шрифтів */
+  line-height: 1.6; /* комфортна міжрядкова відстань */
+}
+
+/* Скидання маркерів списків там, де потрібно керувати стилями вручну */
+ul[class],
+ol[class] {
+  list-style: none; /* вимикаємо маркери, якщо у списку є свій class */
+  margin: 0;
+  padding: 0;
+}
+
+/* Посилання за замовчуванням */
+a {
+  color: var(--c-primary); /* фірмовий колір для посилань */
+  text-decoration: none; /* знімаємо підкреслення (додаємо на :hover) */
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline; /* повертаємо підкреслення при взаємодії */
+  outline: none; /* outline прибираємо, бо використовуємо underline */
+}
+/* 1) ХЕДЕР + НАВІГАЦІЯ (BEM: .header, .navigation) */
+.header {
+  background: var(--c-primary); /* суцільний колір фону шапки */
+  color: #fff; /* білий текст поверх синього */
+  padding: var(--space-6) var(--space-4); /* внутрішні відступи (top/bottom, left/right) */
+  text-align: center; /* вирівняємо контент по центру */
+}
+
+.header__title {
+  margin: 0; /* прибираємо дефолтний відступ заголовка */
+  font-size: 1.5rem; /* популярний розмір заголовка */
+}
+
+/* Навігація як окремий блок */
+.navigation__list {
+  display: inline-flex; /* виводимо пункти меню в рядок */
+  gap: var(--space-4); /* проміжок між пунктами */
+  margin-top: var(--space-3); /* невеликий відступ від заголовка */
+}
+
+.navigation__link {
+  color: #fff; /* білі лінки поверх синього фону */
+  font-weight: 600; /* трохи щільніший текст */
+  padding: var(--space-2) var(--space-3); /* клікабельна зона */
+  border-radius: var(--radius-1); /* ледь заокруглені кути */
+}
+
+.navigation__link:hover,
+.navigation__link:focus-visible {
+  background: rgba(255, 255, 255, 0.15); /* підсвічуємо елемент меню при взаємодії */
+}
+/* ---------------- ОСНОВНИЙ КОНТЕНТ (BEM: .main, .article) ---------------- */
+
+.main {
+  max-width: var(--container-max);       /* обмежуємо ширину центрального контейнера */
+  margin: var(--space-8) auto;           /* центруємо (auto по горизонталі) + зовнішній відступ */
+  padding: var(--space-6) var(--space-4);/* внутрішні відступи секції */
+  background: var(--c-surface);          /* біла поверхня для читабельності */
+  border: 1px solid var(--c-border);     /* тонка рамка для відділення від фону */
+  border-radius: var(--radius-2);        /* приємне заокруглення країв */
+  box-shadow: var(--shadow-1);           /* легка тінь для «карткового» вигляду */
+}
+
+.main__title {
+  margin: 0 0 var(--space-6);            /* прибираємо верхній відступ, додаємо нижній */
+  font-size: 1.75rem;                    /* видимий підзаголовок розділу */
+  line-height: 1.3;                      /* щільний заголовок */
+}
+
+/* Приклад статті */
+.article + .article {
+  margin-top: var(--space-8);            /* відступ між статтями, якщо їх кілька */
+}
+
+.article__title {
+  margin: 0 0 var(--space-3);
+  font-size: 1.5rem;
+}
+
+.article__text {
+  margin: 0 0 var(--space-6);
+}
+/* ---------------- МЕДІА-БЛОК (BEM: .media) ---------------- */
+
+.media {
+  margin: var(--space-6) 0;              /* відступи зверху/знизу */
+}
+
+.media--framed {
+  background: #fafafa;                   /* ледь помітна підкладка */
+  border: 1px solid var(--c-border);     /* тонка рамка */
+  border-radius: var(--radius-2);        /* м’які кути */
+  padding: var(--space-3);               /* внутрішній відступ контенту */
+}
+
+.media__img {
+  display: block;                        /* прибирає «щілину» під inline-зображенням */
+  width: 100%;                           /* робимо зображення респонсивним */
+  height: auto;                          /* зберігаємо пропорції */
+  border-radius: var(--radius-1);        /* ледь заокруглюємо кут */
+}
+
+.media__caption {
+  margin-top: var(--space-2);            /* відступ під зображенням */
+  color: var(--c-muted);                 /* приглушений колір підпису */
+  font-size: 0.875rem;                   /* трохи менший текст */
+  text-align: center;                    /* підпис по центру */
+}
+/* ---------------- СЕРВІСИ / ТАБЛИЦЯ (BEM: .services) ---------------- */
+
+.services__title {
+  margin: 0 0 var(--space-3);
+  font-size: 1.25rem;
+}
+
+.services__table {
+  width: 100%;                           /* таблиця займає всю доступну ширину */
+  border-collapse: collapse;             /* межі клітинок складаються в одну лінію */
+  border: 1px solid var(--c-border);     /* загальна тонка рамка по периметру */
+  border-radius: var(--radius-1);        /* заокруглення для сучасного вигляду */
+  overflow: hidden;                      /* щоб заокруглення працювало для дочірніх елементів */
+}
+
+.services__header,
+.services__cell {
+  padding: var(--space-3) var(--space-4);/* комфортні внутрішні відступи */
+  border-bottom: 1px solid var(--c-border); /* горизонтальні лінії між рядками */
+}
+
+.services__header {
+  background: #f7f7f9;                   /* світлий фон заголовків стовпців */
+  text-align: left;                      /* вирівнювання тексту */
+  font-weight: 600;                      /* підсилюємо вагу заголовка */
+}
+
+.services__row:nth-child(even) .services__cell {
+  background: #fcfcfd;                   /* «зебра»: чергування рядків */
+}
+.sidebar {
+  background: #f9f9f9;              /* світла «картка» */
+  border: 1px solid var(--c-border); /* ледь помітна межа */
+  border-radius: var(--radius-2);   /* м'які кути */
+  padding: var(--space-6) var(--space-4); /* внутрішні відступи */
+  margin: var(--space-6) 0;         /* відступ від інших блоків */
+}
+
+.sidebar__title {
+  margin: 0 0 var(--space-3);
+  font-size: 1.25rem;
+}
+
+.sidebar__list {
+  display: grid;                    /* сітка для однакових відступів між пунктами */
+  gap: var(--space-2);              /* вертикальний проміжок */
+}
+
+.sidebar__item {
+  color: var(--c-text);             /* спадкуємо загальний колір тексту */
+}
+
+.sidebar__link {
+  color: var(--c-primary);          /* підкреслюємо, що це посилання */
+}
+
+.sidebar__link:hover,
+.sidebar__link:focus-visible {
+  text-decoration: underline;       /* підкреслення при взаємодії */
+}
+
+.sidebar--links {
+  background: #c3a9a9;              /* колір тла модифікатора */
+}
+
+.sidebar--values {
+  background: #b9d3ca;              /* колір тла модифікатора */
+}
+
+.sidebar--social {
+  background: #80b180;              /* колір тла модифікатора */
+}
+.footer {
+  background: #2f3338;               /* темний фон */
+  color: #fff;                       /* світлий текст */
+  text-align: center;                /* центруємо вміст */
+  padding: var(--space-6) var(--space-4); /* внутрішні відступи */
+  margin-top: var(--space-8);        /* відділяємо від контенту зверху */
+}
+
+.footer__text {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer__group-name {
+  color: var(--c-accent);            /* виділяємо назву групи акцентним кольором */
+  font-weight: 700;                  /* підсилюємо */
+}
+/* Обгортка форми */
+.contact-form {
+  width: 100%;                       /* форма тягнеться на всю ширину контейнера */
+  max-width: 640px;                  /* але не більше за 640px — краща читабельність */
+  margin: 0 auto;                    /* центруємо форму */
+  padding: var(--space-6) var(--space-0); /* внутрішні відступи */
+  background: #fff;                  /* світлий фон */
+  border: 1px solid var(--c-border); /* рамка */
+  border-radius: var(--radius-2);    /* заокруглення */
+  box-shadow: var(--shadow-2);       /* легка тінь — візуально піднімає форму над фоном */
+}
+
+/* Рядок форми (лейбл + поле) */
+.contact-form__row {
+  display: grid;                     /* сітка для вертикального вирівнювання лейбла й поля */
+  gap: var(--space-2);               /* проміжок між лейблом та полем */
+  margin-bottom: var(--space-4);     /* відділяємо рядки один від одного */
+}
+
+/* Підпис до поля */
+.contact-form__label {
+  font-weight: 600;                  /* робимо лейбл трохи помітнішим */
+  line-height: 1.3;                  /* компактний міжрядковий інтервал */
+}
+
+/* Текстові поля і textarea: спільний стиль */
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;                       /* поле займає всю доступну ширину у контейнері */
+  padding: var(--space-3) var(--space-4); /* внутрішні відступи для зручності тексту */
+  font-size: 1rem;                   /* розмір тексту відповідає загальному стилю */
+  font-family: inherit;              /* використовуємо шрифт як на сайті */
+  line-height: 1.5;                  /* зручна висота рядка */
+  color: var(--c-text);              /* основний колір тексту */
+  background: #fff;                  /* білий фон */
+  border: 1px solid #dcdcdc;         /* нейтральна сіра рамка (не відволікає) */
+  border-radius: var(--radius-1);    /* легке заокруглення кутів */
+  outline: none;                     /* прибираємо стандартний outline браузера */
+  transition: border-color .25s ease, box-shadow .25s ease; /* анімація при фокусі/hover */
+}
+
+/* Плейсхолдери – підказки у полях */
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: #9a9a9a;                    /* приглушений колір підказки */
+}
+
+/* Ефект наведення (hover) */
+.contact-form__input:hover,
+.contact-form__textarea:hover {
+  border-color: #9a9a9a;             /* трохи темніша рамка при наведенні */
+}
+
+/* Ефект фокусу (активні поля): помітний, але не агресивний */
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  border-color: #3498db;             /* синя рамка при фокусі */
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.15); /* м’яке світіння як дружній фокус-індикатор */
+}
+/* Висота textarea за замовчуванням і можливість змінювати */
+.contact-form__textarea {
+    min-height: 8rem;                 /* стартова висота (~128px) */
+    resize: vertical;                 /* дозволяємо тягнути тільки за висотою */
+}
+
+/* Валідація HTML5 (базова) */
+.contact-form__input:required:user-invalid,
+.contact-form__textarea:required:user-invalid {
+    border-color: #dc3545;            /* червона рамка для некоректного вводу */
+}
+.contact-form__input:required:valid,
+.contact-form__textarea:required:valid {
+    border-color: #198754;            /* зелена рамка для коректного вводу */
+}
+
+/* Кнопка відправки */
+.contact-form__button {
+    display: inline-flex;             /* дає кращий контроль за вирівнюванням контенту кнопки */
+    align-items: center;              /* вертикальне вирівнювання тексту/іконки всередині */
+    gap: var(--space-2);              /* якщо додавати іконку — буде проміжок */
+    padding: var(--space-3) var(--space-6); /* вертикальний/горизонтальний відступи */
+    border: none;                     /* прибираємо стандартну рамку */
+    border-radius: var(--radius-2);   /* округлення кутів для дружнього вигляду */
+    background: var(--c-primary);     /* основний колір фону */
+    color: #fff;                      /* білий текст поверх синього */
+    font-weight: 600;                 /* трохи щільніший шрифт */
+    cursor: pointer;                  /* рука-покажчик → елемент клікабельний */
+    box-shadow: var(--shadow-1);      /* легка тінь робить кнопку виразнішою */
+    transition: background .2s ease, transform .05s ease; /* плавні стани */
+}
+.contact-form__button:hover,
+.contact-form__button:focus-visible {
+    background: var(--c-primary-600); /* темніший фон при взаємодії */
+}
+
+.contact-form__button:active {
+    transform: translateY(1px);       /* мікро-натискання: приємний тактильний фідбек */
+}
+
+.contact-form__button:disabled {
+    opacity: 0.6;                     /* зменшуємо помітність, коли кнопка неактивна */
+    cursor: not-allowed;              /* курсор показує, що взаємодія недоступна */
+}
+
+

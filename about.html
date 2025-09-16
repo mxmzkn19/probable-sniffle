@@ -7,70 +7,76 @@
       name="description"
       content="Сторінка 'Про нас': інформація про команду, навички та історію."
     />
-    <title>Лабораторна 2 - Про нас</title>
+    <title>Лабораторна 3 - Про нас</title>
     <link rel="icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <a class="skip-link" href="#main">Перейти до основного контенту</a>
+    <a class="skip-link" href="#main-content">Перейти до основного контенту</a>
 
-    <header class="site-header">
-      <h1 class="site-title">Мій перший лендінг</h1>
-      <nav class="main-nav" aria-label="Головна навігація">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="index.html">Головна</a>
+    <header class="header">
+      <h1 class="header__title">Мій перший лендінг</h1>
+      <nav class="navigation" aria-label="Головна навігація">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="index.html" class="navigation__link">Головна</a>
           </li>
-          <li class="nav-item">
-            <a href="about.html" aria-current="page">Про нас</a>
+          <li class="navigation__item">
+            <a href="about.html" class="navigation__link" aria-current="page">Про нас</a>
           </li>
-          <li class="nav-item"><a href="contacts.html">Контакти</a></li>
+          <li class="navigation__item">
+            <a href="contacts.html" class="navigation__link">Контакти</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <main id="main" class="main">
-      <article class="about-article">
-        <header class="about-article__header">
-          <h2 class="about-article__title">Про нашу команду</h2>
-        </header>
-        <p class="about-article__text">
+    <main id="main-content" class="main">
+      <article class="article">
+        <h2 class="article__title">Про нашу команду</h2>
+        <p class="article__text">
           Ми — команда студентів, що створює навчальний веб-проєкт у межах
           курсу «Web-програмування».
         </p>
       </article>
 
-      <section class="skills" aria-labelledby="skills-title">
-        <h3 class="skills__title" id="skills-title">Наші навички</h3>
-        <ul class="skills__list">
-          <li class="skills__item">HTML, семантика, доступність</li>
-          <li class="skills__item">CSS, адаптивна верстка</li>
-          <li class="skills__item">JavaScript, робота з DOM</li>
+      <section class="main__section">
+        <h3 class="main__section-title">Наші навички</h3>
+        <ul class="main__list">
+          <li class="main__list-item">HTML, семантика, доступність</li>
+          <li class="main__list-item">CSS, адаптивна верстка</li>
+          <li class="main__list-item">JavaScript, робота з DOM</li>
         </ul>
       </section>
 
-      <section class="history" aria-labelledby="history-title">
-        <h3 class="history__title" id="history-title">Історія</h3>
-        <dl class="history__list">
-          <div class="history__row">
-            <dt class="history__term">2023</dt>
-            <dd class="history__desc">Перші навчальні проєкти</dd>
-          </div>
-          <div class="history__row">
-            <dt class="history__term">2024</dt>
-            <dd class="history__desc">Командні pet-проєкти та хакатони</dd>
-          </div>
-          <div class="history__row">
-            <dt class="history__term">2025</dt>
-            <dd class="history__desc">Запуск навчального лендінгу</dd>
-          </div>
-        </dl>
+      <section class="main__section">
+        <h3 class="main__section-title">Історія</h3>
+        <table class="main__table">
+          <thead class="main__thead">
+            <tr>
+              <th class="main__th">Рік</th>
+              <th class="main__th">Подія</th>
+            </tr>
+          </thead>
+          <tbody class="main__tbody">
+            <tr>
+              <td class="main__td">2023</td>
+              <td class="main__td">Перші навчальні проєкти</td>
+            </tr>
+            <tr>
+              <td class="main__td">2024</td>
+              <td class="main__td">Командні pet-проєкти та хакатони</td>
+            </tr>
+            <tr>
+              <td class="main__td">2025</td>
+              <td class="main__td">Запуск навчального лендінгу</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
 
-    <aside
-      class="sidebar sidebar--values"
-      aria-label="Додаткова інформація"
-    >
+    <aside class="sidebar sidebar--values" aria-label="Додаткова інформація">
       <h3 class="sidebar__title">Цінності</h3>
       <ul class="sidebar__list">
         <li class="sidebar__item">Якість коду та прозорість</li>
@@ -79,8 +85,8 @@
       </ul>
     </aside>
 
-    <footer class="site-footer">
-      <p class="site-footer__text">
+    <footer class="footer">
+      <p class="footer__text">
         © Заікін Максим Вадимович, група 6.1213.1, 2025.
       </p>
     </footer>

@@ -1,0 +1,21 @@
+.media {
+  margin: var(--space-6) 0;
+  aspect-ratio: 16/9;
+  overflow: clip;
+}
+
+.media--framed {
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  padding: var(--space-3);
+}
+
+.media__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-1);
+}

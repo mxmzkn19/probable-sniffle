@@ -1,0 +1,29 @@
+{
+  "name": "probable-sniffle",
+  "version": "1.0.0",
+  "description": "readme to test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxmzkn19/probable-sniffle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mxmzkn19/probable-sniffle/issues"
+  },
+  "homepage": "https://github.com/mxmzkn19/probable-sniffle#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "sass": "^1.93.2",
+    "vite": "^7.1.9"
+  }
+}

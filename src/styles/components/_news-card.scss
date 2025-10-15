@@ -1,15 +1,31 @@
+.news__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+  gap: var(--space-6);
+  align-items: stretch;
+}
+
 .news-card {
   display: flex;
   flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-2);
-  overflow: hidden;
+  overflow: hidden; 
   box-shadow: var(--shadow-1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
 }
 
-.news-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.news-card__img {
+  display: block; 
+  width: 100%;
+  aspect-ratio: 16/9; 
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-1);
 }

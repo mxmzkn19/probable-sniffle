@@ -1,5 +1,8 @@
-@use './abstracts/_index' as ui;
+@use './index' as ui;
 
+@use './abstracts/variables';
+@use './abstracts/mixins';
+@use './abstracts/functions';  
 @use './base/reset';
 @use './base/base';
 @use './layout/layout';
@@ -10,4 +13,4 @@
 @use './components/contact-form';
 @use './components/news-card';
 @use './components/media';
-@use './themes/dark-theme';
+@use './base/theme-dark';

@@ -1,16 +1,16 @@
-@use './index' as ui;
+@use './_index' as ui;
 
-@use './abstracts/variables';
-@use './abstracts/mixins';
-@use './abstracts/functions';  
 @use './base/reset';
 @use './base/base';
+@use './base/theme-dark';
+
 @use './layout/layout';
 @use './layout/header';
-@use './layout/main';
 @use './layout/sidebar';
+@use './layout/main';
 @use './layout/footer';
-@use './components/contact-form';
+@use './layout/responsive';
+
 @use './components/news-card';
 @use './components/media';
-@use './base/theme-dark';
+@use './components/contact-form';

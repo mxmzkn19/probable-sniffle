@@ -1,26 +1,27 @@
-@media (min-width: 640px){
+@use '../_index' as ui;
+
+/* ≥ 640px */
+@include ui.up(sm){
   .layout{
     grid-template-columns: 220px 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
-    "header header"
-    "sidebar main"
-    "footer footer";
-  } 
-
-  .footer__inner {
-    grid-template-columns: 1fr minmax(220px, 1fr);
+    grid-template-areas:
+      "header header"
+      "sidenav main"
+      "footer footer";
   }
 
-  .footer__text{order: initial;}
+  .footer{
+    &__inner{ grid-template-columns: 1fr minmax(220px, 1fr); }
+    &__text{ order: initial; }
+  }
 }
 
-@media (min-width:1024px){
-  .layout {
-    grid-template-columns: 280px 1fr;
-  } 
+/* ≥ 1024px */
+@include ui.up(lg){
+  .layout{ grid-template-columns: 280px 1fr; }
 
-  .footer__inner {
-    grid-template-columns: 1fr minmax(280px, 1fr);
+  .footer{
+    &__inner{ grid-template-columns: 1fr minmax(280px, 1fr); }
   }
 }

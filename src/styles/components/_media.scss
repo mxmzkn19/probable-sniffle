@@ -1,21 +1,27 @@
-.media {
+.media{
   margin: var(--space-6) 0;
   aspect-ratio: 16/9;
   overflow: clip;
-}
 
-.media--framed {
-  background: #fafafa;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2);
-  padding: var(--space-3);
-}
+  &--framed{
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2);
+    padding: var(--space-3);
+  }
 
-.media__img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: var(--radius-1);
+  &__img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--radius-1);
+  }
+
+  &__caption{
+    margin-top: var(--space-2);
+    color: var(--fg-muted);
+    font-size: .9rem;
+    text-align: center;
+  }
 }

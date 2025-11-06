@@ -1,15 +1,16 @@
-.layout {
+.layout{
   display: grid;
-  grid-template-columns: 1fr;   
-  grid-template-rows: auto auto 1fr auto;  
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
-     "header"
-     "sidebar"
-     "main"
-     "footer";
-  min-height: 100dvh; 
+    "header"
+    "sidenav"
+    "main"
+    "footer";
+  min-height: 100dvh;
 }
+
 .header { grid-area: header; }
-.sidebar { grid-area: sidebar; }
-.main { grid-area: main; }
+.sidenav{ grid-area: sidenav; }
+.main   { grid-area: main; }
 .footer { grid-area: footer; }

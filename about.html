@@ -1,142 +1,15 @@
-<!DOCTYPE html>
-<html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Сторінка 'Про нас': інформація про команду, навички та історію."
-    />
-    <title>Лабораторна 6 - Про нас</title>
-    <link rel="icon" href="assets/images/favicon.ico" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main-content">Перейти до основного контенту</a>
+{{#> layout pageTitle="Про нас" studentGroup="8.1211-іпз" studentEmail="krivoyyaroslav21@gmail.com" }}
+<article class="about-article">
+  <h2 class="about-article__title">Про нашу команду</h2>
+  <p class="about-article__text">Ми — команда студентів, що вивчає Web...</p>
+</article>
 
-    <div class="layout">
-      <header class="header">
-        <h1 class="header__title">Мій перший лендінг</h1>
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="index.html" class="nav__link">Головна</a>
-            </li>
-            <li class="nav__item">
-              <a href="about.html" class="nav__link">Про нас</a>
-            </li>
-            <li class="nav__item nav__item--cta">
-              <a href="contacts.html" class="nav__link nav__link--cta">Контакти</a>
-            </li>
-          </ul>
-        </nav>
-      </header>
 
-      <aside class="sidebar">
-        <section class="sidebar__section sidebar--links">
-          <h2 class="sidebar__title">Корисні посилання</h2>
-          <ul class="sidebar__list">
-            <li>
-              <a href="https://developer.mozilla.org/uk/" class="sidebar__link" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>
-            </li>
-            <li>
-              <a href="https://www.w3schools.com/" class="sidebar__link" target="_blank" rel="noopener noreferrer">W3Schools</a>
-            </li>
-            <li>
-              <a href="https://validator.w3.org/" class="sidebar__link" target="_blank" rel="noopener noreferrer">HTML Validator</a>
-            </li>
-          </ul>
-        </section>
-
-        <section class="sidebar__section sidebar--values">
-          <h2 class="sidebar__title">Наші цінності</h2>
-          <ul class="sidebar__list">
-            <li class="sidebar__item">Семантичність</li>
-            <li class="sidebar__item">Адаптивність</li>
-            <li class="sidebar__item">Доступність</li>
-          </ul>
-        </section>
-
-        <section class="sidebar__section sidebar--social">
-          <h2 class="sidebar__title">Ми в соцмережах</h2>
-          <ul class="sidebar__list">
-            <li><a href="#" class="sidebar__link">Facebook</a></li>
-            <li><a href="#" class="sidebar__link">Instagram</a></li>
-            <li><a href="#" class="sidebar__link">LinkedIn</a></li>
-          </ul>
-        </section>
-      </aside>
-
-      <main id="main-content" class="main">
-        <article class="article">
-          <h2 class="article__title">Про нашу команду</h2>
-          <p class="article__text text-block">
-            Ми — команда студентів, що створює навчальний веб-проєкт у межах
-            курсу «Web-програмування».
-          </p>
-        </article>
-
-        <section class="main__section">
-          <h3 class="main__section-title">Наші навички</h3>
-          <ul class="main__list text-block">
-            <li class="main__list-item">HTML, семантика, доступність</li>
-            <li class="main__list-item">CSS, адаптивна верстка</li>
-            <li class="main__list-item">JavaScript, робота з DOM</li>
-          </ul>
-        </section>
-
-        <section class="main__section">
-          <h3 class="main__section-title">Історія</h3>
-          <table class="main__table text-block">
-            <thead class="main__thead">
-              <tr>
-                <th class="main__th">Рік</th>
-                <th class="main__th">Подія</th>
-              </tr>
-            </thead>
-            <tbody class="main__tbody">
-              <tr>
-                <td class="main__td">2023</td>
-                <td class="main__td">Перші навчальні проєкти</td>
-              </tr>
-              <tr>
-                <td class="main__td">2024</td>
-                <td class="main__td">Командні pet-проєкти та хакатони</td>
-              </tr>
-              <tr>
-                <td class="main__td">2025</td>
-                <td class="main__td">Запуск навчального лендінгу</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </main>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer__inner">
-          <p class="footer__text">© 2025 Група <span class="footer__group-name">6.1213-1</span></p>
-          
-          <address class="footer__contacts" aria-label="Наші контакти">
-            <h3 class="footer__contacts-title">Наші контакти</h3>
-            <ul class="footer__contacts-list">
-              <li class="footer__contacts-item">
-                <span class="footer__label">Email:</span>
-                <a class="footer__link" href="mailto:team@example.com">mxmzkn19@gmail.com</a>
-              </li>
-              <li class="footer__contacts-item">
-                <span class="footer__label">Телефон:</span>
-                <a class="footer__link" href="tel:+380501112233">+38 (050) 111-22-33</a>
-              </li>
-              <li class="footer__contacts-item">
-                <span class="footer__label">Адреса:</span>
-                <span>Запоріжжя, вул. Університетська, 66б</span>
-              </li>
-            </ul>
-          </address>
-        </div>
-      </footer>
-    </div>
-
-    <script type="module" src="src/main.js"></script>
-  </body>
-</html>
+<section class="skills">
+  <h3 class="skills__title">Наші навички</h3>
+  <ul class="skills__list">
+    <li class="skills__item">HTML, CSS, JavaScript</li>
+    <li class="skills__item">React, Node.js</li>
+  </ul>
+</section>
+{{/layout}}

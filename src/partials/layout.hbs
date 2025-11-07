@@ -3,7 +3,7 @@
 <head>
     {{> head pageTitle=pageTitle }}
 </head>
-<body>
+<body data-page="{{pageCode}}">
 <div class="layout">
     {{> header }}
     {{> aside }}
@@ -13,6 +13,5 @@
     {{> footer studentGroup=studentGroup studentEmail=studentEmail}}
 </div>
 <script type="module" src="/src/main.js"></script>
-
 </body>
 </html>

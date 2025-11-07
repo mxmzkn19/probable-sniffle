@@ -1,0 +1,123 @@
+
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: var(--space-4);
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-2);
+  }
+
+  &__role {
+    color: var(--fg-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--brand);
+    color: #fff;
+    border: 0;
+    border-radius: var(--radius-1);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--brand-600);
+    }
+  }
+}
+.team__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.employee-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+
+  &__photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: var(--space-4);
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-2);
+  }
+
+  &__role {
+    color: var(--fg-muted);
+    margin-bottom: var(--space-4);
+  }
+
+  &__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--brand);
+    color: #fff;
+    border: 0;
+    border-radius: var(--radius-1);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      background: var(--brand-600);
+    }
+  }
+}
